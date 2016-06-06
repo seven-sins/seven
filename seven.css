@@ -1,0 +1,110 @@
+*{margin:0;padding:0;}
+/*lock*/
+.t-lock-screen{position:fixed;left:0;top:0;background:#666;z-index:99990;
+    filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity: 0.5;
+}
+.t-lock-screen .t-loading-screen{width:38px;height:38px;background: url(./images/loading.gif) no-repeat;
+    position:fixed;left:47%;top:47%;z-index:99991;
+}
+/*alert*/
+.t-message-container{position:fixed;left:-1000px;top:-1000px;border:18px solid #fff;background:#fff;
+    padding:0 20px 41px 0;z-index:99999;min-width:238px;max-width:258px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);overflow:hidden;
+}
+.t-message-title{color:#333;font-size:15px;height:31px;line-height:31px;
+    margin:0;padding: 0 0 0 7px;position:relative;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.3);
+}
+.t-message-content{text-align:left;line-height:24px;color:#777;padding: 10px 0 10px 7px;font-size:12px;}
+.t-message-toolbar{width:100%;height:31px;line-height:31px;position:absolute;bottom:2px;right:2px;
+	text-align:right;
+}
+.t-message-toolbar span{color:#333;padding:7px 21px;font-size:11px;background:#e8e8e8;
+	border-radius: 3px;cursor: pointer; outline:none;
+    box-shadow:0 0 1px rgba(66,66,66,0.6);
+}
+.t-message-toolbar span:hover{background:#eee;}
+/*confirm*/
+.t-confirm-container{position:fixed;left:-1000px;top:-1000px;border:18px solid #fff;background:#fff;
+    padding:0 20px 41px 0;z-index:99999;min-width:238px;max-width:258px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);overflow:hidden;
+}
+.t-confirm-title{color:#333;font-size:15px;height:31px;line-height:31px;
+    margin:0;padding: 0 0 0 7px;position:relative;text-shadow:1px 1px 2px rgba(0,0,0,0.3);
+}
+.t-confirm-content{text-align:left;line-height:24px;color:#777;padding: 10px 0 10px 7px;font-size:12px;}
+.t-confirm-toolbar{width:100%;height:31px;line-height:31px;position:absolute;bottom:2px;right:2px;
+	text-align:right;
+}
+.t-confirm-toolbar span{color:#333;padding:7px 21px;font-size:11px;background:#e8e8e8;
+	border-radius: 3px;cursor: pointer; outline:none;
+	box-shadow:0 0 1px rgba(66,66,66,0.6);
+}
+.t-confirm-toolbar span:hover{background:#eee;}
+.t-confirm-toolbar .t-confirm-ok{margin-right:5px;}
+.t-confirm-toolbar .t-confirm-cancel{margin-left:5px;}
+/*msg*/
+.t-msg-container{position:fixed;left:-1000px;top:-1000px;border:8px solid #61a1e9;background:orange;
+	padding:8px 66px;font-size:15px;z-index:19890000;color:#fff;line-height:21px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);cursor:pointer;
+}
+
+/*login*/
+.login-container{position:fixed;top:-1000px;left:-1000px;padding:22px 52px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    width:300px;height:220px;z-index:99999;background:#fff;
+}
+.login-container-item{margin:0 0 8px 0;}
+.login-container-item label{line-height:36px;font-size:12px;color:#666;}
+.login-container-item input{display:block;width:100%;height:35px;
+    border:1px solid #ccc;box-sizing:border-box;padding:0 6px;
+    font-size:12px;color:#666;border-radius:3px;outline:none;
+}
+.login-container .forgot-password{text-align:right;position:relative;}
+.login-container .forgot-password a{font-size:10px;
+    color:#888;
+}
+.login-container .forgot-password a:hover{color:#2a66f5;}
+.login-container .forgot-password .errorMsg{color:#d00;position:absolute;left:0;top:0;font-size:11px;}
+.login-container .login-buttons{height:39px;line-height:21px;position:relative;}
+.login-container .login-buttons input,.login-container .login-buttons label{
+    box-sizing:border-box;font-size:10px;color:#888;
+}
+.login-container .login-buttons input{position:relative;top:3px;margin:0 3px 0 0;}
+.login-container .login-buttons label:hover{text-decoration:underline;color:#2a66f5;
+    cursor:pointer;
+}
+.login-container .login-buttons span{position:absolute;right:0;bottom:0;
+    height:28px;line-height:28px;width:58px;text-align:center;
+    background:#83bcf1;font-size:12px;color:#fff;
+    text-decoration:none;border-radius:3px;cursor:pointer;
+}
+.login-container .login-buttons span:hover{background:#64abed;}
+
+/*t-dialog-container*/
+.t-dialog-container{position:fixed;left:-1000px;top:-1000px;box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    z-index:99999;background:#fff;
+}
+.t-dialog-title{height:31px;line-height:31px;text-indent:13px;
+    box-shadow:0 2px 2px rgba(0,0,0,0.2);margin:0 0 3px 0;font-size:12px;
+    color:#333;
+}
+.t-dialog-close{
+    background:url(images/close.gif)no-repeat;
+    padding:10px;position:absolute;right:8px;top:6px;
+    cursor: pointer;transition:0.3s;
+}
+.t-dialog-close:hover{
+    /*transform:rotate(360deg);*/
+    background-position: 0 -20px;
+}
+
+
+
+
+
+
+
+
+
+
