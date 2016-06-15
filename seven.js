@@ -10,7 +10,6 @@
         constructor: seven,
 
         init: function (selector, context) {
-            //console.log(typeof selector);
             if (!selector) {
                 return this;
             }
@@ -466,7 +465,7 @@
         	if(this.elements[0].innerWidth)
     			return this.elements[0].innerWidth;
     		else
-    			return this.elements[0].innerWidth;
+    			return this.elements[0].offsetWidth;
         },
         innerHeight: function () {
         	if(this.elements[0].innerHeight)
