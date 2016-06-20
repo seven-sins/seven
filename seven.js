@@ -10,6 +10,7 @@
         constructor: seven,
 
         init: function (selector, context) {
+            //console.log(typeof selector);
             if (!selector) {
                 return this;
             }
@@ -1832,7 +1833,13 @@
             ajax.onreadystatechange = function () {
                 //如果状态码为4
                 if (ajax.readyState == 4) {
-                    successFn.call(this, ajax.responseText);
+                	var result = ajax.responseText;
+                	try{ // 如果为json格式字符串，返回json对象
+                		result = JSON.parse(result);
+                		successFn.call(this, result);
+                	}catch(e){
+                		successFn.call(this, result);
+                	}
                 }
             };
             var query = [], _data;
@@ -1845,7 +1852,6 @@
                 _data = encodeURI(data);
             }
 
-            //console.log(_data);
             //
             ajax.send(_data);
         },

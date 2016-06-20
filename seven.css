@@ -83,7 +83,7 @@
 
 /*t-dialog-container*/
 .t-dialog-container{position:fixed;left:-1000px;top:-1000px;box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    z-index:99999;background:#fff;
+    z-index:99999;background:#fff;overflow:hidden;
 }
 .t-dialog-title{height:31px;line-height:31px;text-indent:13px;
     box-shadow:0 2px 2px rgba(0,0,0,0.2);margin:0 0 3px 0;font-size:12px;
