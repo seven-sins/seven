@@ -1904,7 +1904,8 @@
             var settings = {
                 msg: "",
                 title: "信息",
-                shadow: true
+                shadow: true,
+                background: "normal"
             };
 
             seven.initialize(settings, args);
@@ -1912,6 +1913,10 @@
             if (settings.shadow === true) seven.lock();
 
             var obj = document.createElement('div');
+            if(settings.background !== "normal"){
+            	obj.style.borderColor = settings.background;
+                obj.style.background = settings.background;
+            }
             obj.className = 't-message-container';
             var _title = document.createElement('div');
             _title.innerHTML = settings.title;
@@ -1950,13 +1955,18 @@
             var settings = {
                 msg: "",
                 title: "信息",
-                shadow: true
+                shadow: true,
+                background: "normal"
             };
             seven.initialize(settings, args);
 
             if (settings.shadow === true) seven.lock();
 
             var obj = document.createElement('div');
+            if(settings.background !== "normal"){
+            	obj.style.borderColor = settings.background;
+                obj.style.background = settings.background;
+            }
             obj.className = 't-confirm-container';
             var _title = document.createElement('div');
             _title.innerHTML = settings.title;
