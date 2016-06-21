@@ -10,7 +10,6 @@
         constructor: seven,
 
         init: function (selector, context) {
-            //console.log(typeof selector);
             if (!selector) {
                 return this;
             }
@@ -1835,7 +1834,9 @@
                 if (ajax.readyState == 4) {
                 	var result = ajax.responseText;
                 	try{ // 如果为json格式字符串，返回json对象
-                		result = JSON.parse(result);
+                		if(typeof JSON != "undefined"){
+                			result = JSON.parse(result);
+                		}
                 		successFn.call(this, result);
                 	}catch(e){
                 		successFn.call(this, result);
@@ -1870,8 +1871,6 @@
         remove: function (url, data, successFn, errorFn) {
             this.ajaxRequest('DELETE', url, data, successFn, errorFn);
         },
-        // ecmascript实现的方法，不兼容ie67
-        parseJSON: JSON.parse,
         //
         each: function (obj, fn) {
             var value;
@@ -2369,5 +2368,5 @@
     });
 
 
-    window.S = window.$= seven;
+    window.s = seven;
 })(window);
