@@ -1910,7 +1910,7 @@
 
             seven.initialize(settings, args);
 
-            if (settings.shadow) seven.lock();
+            if (settings.shadow === true) seven.lock();
 
             var obj = document.createElement('div');
             if(settings.background !== "normal"){
@@ -1930,7 +1930,7 @@
             _confirm.className = 't-message-ok';
             _confirm.innerHTML = '确定';
             _confirm.onclick = function () {
-                if (settings.shadow) seven.unlock();
+                if (settings.shadow === true) seven.unlock();
                 seven(obj).remove();
             };
             //
@@ -1960,7 +1960,7 @@
             };
             seven.initialize(settings, args);
 
-            if (settings.shadow) seven.lock();
+            if (settings.shadow === true) seven.lock();
 
             var obj = document.createElement('div');
             if(settings.background !== "normal"){
@@ -1983,7 +1983,7 @@
                 if (typeof settings.confirm == 'function') {
                     settings.confirm.call(obj);
                 }
-                if (settings.shadow) seven.unlock();
+                if (settings.shadow === true) seven.unlock();
                 seven(obj).remove();
             };
             var _cancel = document.createElement('span');
@@ -2069,7 +2069,7 @@
             obj.style.fontSize = settings.fontSize;
 
             obj.onclick = function () {
-                if (settings.shadow) seven.unlock();
+                if (settings.shadow === true) seven.unlock();
                 if (typeof settings.callback == 'function') {
                     settings.callback.call(obj);
                 }
@@ -2077,7 +2077,7 @@
             };
             document.body.appendChild(obj);
 
-            if (settings.shadow) seven.lock();
+            if (settings.shadow === true) seven.lock();
             seven(obj).center();
             seven(window).resize(function () {
                 seven(obj).center();
@@ -2091,7 +2091,7 @@
                 var timer = setInterval(function () {
                     if (settings.second < 1) {
                         clearInterval(timer);
-                        if (settings.shadow) seven.unlock();
+                        if (settings.shadow === true) seven.unlock();
                         if (typeof settings.callback == 'function') {
                             settings.callback.call(obj);
                         }
@@ -2113,8 +2113,7 @@
                 title: "新窗口",
                 shadow: true,
                 width: 500,
-                height: 300,
-                drag: true
+                height: 300
             };
             seven.initialize(settings, args);
             if (typeof settings.url == 'undefined') {
@@ -2125,9 +2124,6 @@
             settings.height = parseInt(settings.height) + 'px';
 
             var obj = document.createElement('div');
-            if(settings.drag){
-            	seven(obj).drag();
-            }
             obj.className = 't-dialog-container';
             obj.style.width = settings.width;
             obj.style.height = settings.height;
@@ -2137,7 +2133,7 @@
             var closeSpan = document.createElement('span');
             closeSpan.className = 't-dialog-close';
             closeSpan.onclick = closeSpan.close = function () {
-                if (settings.shadow) seven.unlock();
+                if (settings.shadow === true) seven.unlock();
                 seven(obj).remove();
             };
             titleDiv.appendChild(closeSpan);
@@ -2154,7 +2150,7 @@
             obj.appendChild(iframe);
 
             document.body.appendChild(obj);
-            if (settings.shadow) seven.lock();
+            if (settings.shadow === true) seven.lock();
             seven(obj).center();
             seven(window).resize(function () {
                 seven(obj).center();
@@ -2170,16 +2166,12 @@
                 userName: '用户名',
                 passWord: '密码',
                 showForget: true,
-                showRemember: true,
-                drag: true
+                showRemember: true
             };
             seven.initialize(settings, args);
 
             var obj = document.createElement('div');
             obj.className = 'login-container';
-            if(settings.drag){
-            	seven(obj).drag();
-            }
             //create userName
             var user = document.createElement('div');
             user.className = 'login-container-item';
@@ -2217,7 +2209,7 @@
             var forget_link = document.createElement('a');
             forget_link.href = 'javascript:;';
             forget_link.innerHTML = '忘记密码?';
-            if (!settings.showForget) {
+            if (settings.showForget == false) {
                 forget_link.style.visibility = 'hidden';
             }
             forget_link.onclick = function () {
@@ -2236,7 +2228,7 @@
             var buttons_label = document.createElement('label');
             buttons_label.htmlFor = 'rememberPassword';
             buttons_label.innerHTML = '记住密码';
-            if (!settings.showRemember) {
+            if (settings.showRemember == false) {
                 checkbox.style.visibility = 'hidden';
                 buttons_label.style.visibility = 'hidden';
             }
@@ -2285,14 +2277,14 @@
             obj.appendChild(pwd);
             obj.appendChild(toolbar);
             obj.close = function () {
-                if (settings.shadow) seven.unlock();
+                if (settings.shadow === true) seven.unlock();
                 seven(obj).remove();
             };
             obj.msg = function (msg) {
                 error.innerHTML = msg;
             };
             document.body.appendChild(obj);
-            if (settings.shadow)  seven.lock();
+            if (settings.shadow === true)  seven.lock();
             seven(obj).center();
             seven(window).resize(function () {
                 seven(obj).center();
