@@ -2112,6 +2112,7 @@
             var settings = {
                 title: "新窗口",
                 shadow: true,
+                drag: false,
                 width: 500,
                 height: 300
             };
@@ -2124,6 +2125,9 @@
             settings.height = parseInt(settings.height) + 'px';
 
             var obj = document.createElement('div');
+            if(settings.drag === true){
+            	seven(obj).drag();
+            }
             obj.className = 't-dialog-container';
             obj.style.width = settings.width;
             obj.style.height = settings.height;
@@ -2137,6 +2141,7 @@
                 seven(obj).remove();
             };
             titleDiv.appendChild(closeSpan);
+            obj.close = closeSpan.close;
 
             var iframe = document.createElement('iframe');
             iframe.src = settings.url;
@@ -2155,6 +2160,12 @@
             seven(window).resize(function () {
                 seven(obj).center();
             });
+            // 回调函数
+            if (typeof settings.callback ==='function'){
+            	settings.callback.call(obj);
+            }
+            
+            return obj;
         },
         login: function (args) {
             if (typeof args == 'undefined') {
