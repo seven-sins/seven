@@ -160,13 +160,17 @@
                 speed: 速度值. 默认(currentTop - target) / 10
 
     $.upload({
-        url: 'upload.action',
+        url: 'upload.action',  (必填)
         loading: true,  // 上传中显示loading...
-        maxSize: 2096000,  // 上传文件最大size。    1M = 1024000
+        maxSize: 2048000,  // 上传文件最大size。    1M = 1024000
+        accept: ".jpg, .png, .gif",  // 允许上传类型, 默认支持所有类型
         file: 'fileId', //默认file
-        success: function(data){
-            // 上传成功回调函数
+        success: function(data){   
+            // 上传成功回调函数   (必填)
             // data即返回的信息(string)
+        },
+        error: function(response){
+            // 上传失败回调函数
         }
     })
 

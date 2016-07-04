@@ -2,25 +2,27 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		.dialog{background:#3ba1f0;position:fixed;top:0;left:0;width:50px;height:50px;}
+		
 	</style>
-
-
 </head>
 
 <body>
-	<div class="dialog"></div>
-	<div class="dialog"></div>
-	<div class="dialog"></div>
-	<div class="dialog"></div>
-	<div class="dialog"></div>
-	<div class="dialog"></div>
+<a onclick="upload()">upload</a>
 <script type="text/javascript" src="seven.js"></script>
 
 	<script type="text/javascript">
-		s(".dialog").center().run();		
-
-
+		function upload(){
+			s.upload({
+				url: "",
+				accept: ".jpg, .png, .gif",
+				success: function(result){
+					console.log(result);
+				},
+				error: function(result){
+					console.log(result);
+				}
+			})
+		}	
 	</script>
 </body>
 </html>

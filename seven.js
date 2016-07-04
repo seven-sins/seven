@@ -2312,7 +2312,8 @@
                 success: null,
                 error: null,
                 file: 'file',
-                maxSize: 2096000
+                maxSize: 2048000,
+                accept: null
             };
             seven.initialize(settings, args);
             // 防id名称冲突，先remove
@@ -2338,6 +2339,9 @@
             iFrame.style.display = 'none';
             iFrame.onload = function () {
                 var win = iFrame.contentWindow;
+                if(!win.document.body){
+                	return false;
+                }
                 var response = win.document.body.innerHTML;
                 if (response.replace(/\s+/).length == 0) {
                     return false;
@@ -2356,18 +2360,33 @@
             turnForm.action = settings.url;
             turnForm.enctype = "multipart/form-data";
             turnForm.target = 'uploadIframe';
+            turnForm.style.display = "none";
             //create file controlers
             var fileElement = document.createElement("input");
             fileElement.id = settings.file;
             fileElement.setAttribute("name", settings.file);
             fileElement.setAttribute("type", "file");
+            fileElement.style.display = "none";
             fileElement.onchange = function (e) {
                 var e = e || window.event;
                 var files = e.target.files;
-                if(files[0].size > settings.maxSize){
-                    settings.error.call(this, {"message":"the file is too large"});
-                    return false;
+                if(files){ // files属性不兼容低版本浏览器 
+                	if(files[0].size > settings.maxSize){
+                    	settings.error.call(this, "the file is too large");
+                    	return false;
+                	}
                 }
+                if(settings.accept){ // 验证文件类型
+                	var fileName = e.target.value;
+                	var index = fileName.lastIndexOf(".");
+                	var extensionName = fileName.substring(index + 1);
+                	if(!settings.accept.match(extensionName)){
+                		settings.error.call(this, "invalid file type");
+                		return false;
+                	}
+                }
+                // 
+
                 if(settings.loading) seven.lock({loading: true});
                 turnForm.submit();
             };
