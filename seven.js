@@ -462,12 +462,18 @@
         	}
         },
         innerWidth: function () {
+            if(typeof this.elements[0] == 'undefined'){
+                this.elements.push(window);
+            }
         	if(this.elements[0].innerWidth)
     			return this.elements[0].innerWidth;
     		else
     			return this.elements[0].offsetWidth;
         },
         innerHeight: function () {
+            if(typeof this.elements[0] == 'undefined'){
+                this.elements.push(window);
+            }
         	if(this.elements[0].innerHeight)
     			return this.elements[0].innerHeight;
     		else
@@ -1681,8 +1687,118 @@
         },
         trim: function (text) {
             return text == null ? "" : text.replace(/^\s+|\s+$/, '');
-        }
+        },
         // end
+        // 表单插件
+        dropdownTree: function(args){
+            if(typeof args === 'undefined') args = {};
+            var obj = {};
+            // 是否展开节点
+            obj.expand = (args.expand === true) ? true : false;
+            obj.elem = this.elements[0];
+            // 数据格式转换
+            if(typeof args.data === 'undefined'){
+                seven.ajax({
+                    url: args.url,
+                    type: 'get',
+                    async: false,
+                    success: function(data){
+                        obj.data = data;
+                    }
+                })
+            }else{
+                obj.data = args.data;
+            }
+            // 将list转为tree结构
+            // 数据对象
+            // obj.data
+            function covert(){
+                obj.newData = [];
+                // 获取子节点, 递归
+                function getItems(currentNode, level){
+                    var items = [];
+                    for(var i=0;i<obj.data.length;i++){
+                        if(obj.data[i][args.parentId] == currentNode[args.id]){
+                            obj.data[i].items = getItems(obj.data[i], level + 1);
+                            obj.data[i].leafLevel = level + 1;
+                            items.push(obj.data[i]);
+                        }
+                    }
+                    return items;
+                }
+                // 获取顶级节点
+                for(var i=0;i<obj.data.length;i++){
+                    if(obj.data[i][args.parentId] == "" || obj.data[i][args.parentId] == null || obj.data[i][args.parentId] == 0){
+                        obj.data[i].items = getItems(obj.data[i], 1);
+                        obj.data[i].leafLevel = 0;
+                        obj.newData.push(obj.data[i]);
+                    }
+                }
+            }
+            // 转换数据格式
+            covert();
+            // obj.newData 格式 { id: 0, text: "文本", items: [] }
+            // 当前元素obj.elem前插入容器对象div
+            var parentNode = obj.elem.parentNode;
+            var treeContainer = document.createElement('div');
+            treeContainer.className = 't-tree-container';
+            parentNode.insertBefore(treeContainer, obj.elem);
+            obj.elem.style.display = 'none';
+            // 插入节点，递归
+            function appendNode(list, parent){
+                var node = document.createElement('ul');
+                parent.appendChild(node);
+                if(parent !== treeContainer && !obj.expand){
+                    node.style.display = 'none';
+                }
+                for(var i=0;i<list.length;i++){
+                    var li = document.createElement('li');
+                    var span = document.createElement('span');
+                    if(!obj.expand){
+                        span.className = 't-tree-node-span t-tree-root-close';
+                    }else{
+                        span.className = 't-tree-node-span t-tree-root-open';
+                    }
+                    // 节点点击事件
+                    span.onclick = function(){
+                        var className = 't-tree-root-close';
+                        var tag = this.parentNode.getElementsByTagName('ul')[0];
+                        if (this.className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)'))){
+                            this.className = 't-tree-node-span t-tree-root-open';
+                            if(tag) tag.style.display = 'block';
+                        }else{
+                            this.className = 't-tree-node-span t-tree-root-close';
+                            if(tag) tag.style.display = 'none';
+                        }
+                    };
+
+                    var a = document.createElement('a');
+                    a.setAttribute('data-value', list[i][args.id]);
+                    a.className = 't-tree-node-text'; // 节点文本
+                    var span1 = document.createElement('span');
+                    if(list[i].items && list[i].items.length > 0){
+                        span1.className = 't-tree-child-icon t-tree-branch';
+                    }else{
+                        span1.className = 't-tree-child-icon t-tree-leaf';
+                    }
+                    var span2 = document.createElement('span');
+                    span2.className = 't-tree-child-node-text';
+                    span2.innerHTML = list[i][args.text];
+                    a.appendChild(span1);
+                    a.appendChild(span2);
+                    if(list[i].items && list[i].items.length > 0){
+                        li.appendChild(span);
+                    }
+                    li.appendChild(a);
+                    if(list[i]['items'] && list[i]['items'].length > 0){
+                        appendNode(list[i]['items'], li);
+                    }
+                    node.appendChild(li, list[i]);
+                }
+            }
+            // 插入节点
+            appendNode(obj.newData, treeContainer);
+        }
     };
 
     seven.fn.init.prototype = seven.fn;
@@ -1821,10 +1937,14 @@
         isArray: function (obj) {
             return typeof obj === 'array';
         },
-        ajaxRequest: function (method, url, data, successFn, errorFn) {
+        ajaxRequest: function (method, url, data, successFn, errorFn, async) {
             var ajax = AJAXRequest();
+            if(typeof async === 'boolean'){
+                ajax.open(method, url, async);
+            }else{
+                ajax.open(method, url);
+            }
 
-            ajax.open(method, url);
             //设置ajax请求头
             ajax.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
@@ -1857,7 +1977,7 @@
             ajax.send(_data);
         },
         ajax: function (args) {
-            this.ajaxRequest(args.type, args.url, args.data, args.success, args.error);
+            this.ajaxRequest(args.type, args.url, args.data, args.success, args.error, args.async);
         },
         get: function (url, data, successFn, errorFn) {
             this.ajaxRequest('GET', url, data, successFn, errorFn);

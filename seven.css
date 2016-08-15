@@ -99,9 +99,64 @@
     background-position: 0 -20px;
 }
 
-
-
-
+/*表彰插件样式*/
+/*下拉树*/
+.t-tree-container *{font: 15px/21px Arial, Helvetica, simsun, sans-serif;}
+.t-tree-container ul{background: url(images/line_conn.gif) 0 0 repeat-y;padding:0 0 0 18px;}
+.t-tree-container li{list-style: none;text-align: left;white-space: nowrap;line-height: 14px;}
+.t-tree-container .t-tree-node-span{
+    width:18px;
+    height:18px;
+    margin: 0 2px 0 0;
+    background-image:url(images/tree_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0 none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    background-attachment: scroll;
+}
+.t-tree-container li .t-tree-node-text{
+    height:17px;
+    vertical-align: top;
+    display: inline-block;
+    line-height:16px;
+    padding: 1px 3px 0 0;
+}
+.t-tree-root-open{
+    background-position: -92px 0;
+}
+.t-tree-root-close{
+    background-position: -74px 0;
+}
+.t-tree-child-icon{
+    width:16px;height:16px;
+    background-image:url(images/tree_icon.png);
+    background-repeat: no-repeat;
+    margin-right: 2px;
+    vertical-align: top;
+    line-height: 16px;
+    font-size:12px;
+    display: inline-block;
+    border: 0 none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    background-attachment: scroll;
+    white-space: nowrap;
+}
+.t-tree-leaf{
+    background-position: -110px -32px;
+}
+.t-tree-branch{
+    background-position: -110px -16px;
+}
+.t-tree-child-node-text{
+    line-height: 16px;
+    margin-right: 2px;
+}
 
 
 

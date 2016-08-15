@@ -7,22 +7,12 @@
 </head>
 
 <body>
-<a onclick="upload()">upload</a>
+<input type="text" class="tree" />
+<link href="seven.css" rel="stylesheet" />
 <script type="text/javascript" src="seven.js"></script>
 
 	<script type="text/javascript">
-		function upload(){
-			s.upload({
-				url: "",
-				accept: ".jpg, .png, .gif",
-				success: function(result){
-					console.log(result);
-				},
-				error: function(result){
-					console.log(result);
-				}
-			})
-		}	
+        s(".tree").dropdownTree({url: 'json.json', id: "id", text: "name", parentId: "parentId", expand: true});
 	</script>
 </body>
 </html>
