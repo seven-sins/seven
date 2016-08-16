@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca8a9e6f-d45c-4fc7-8924-ae034536d83a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/CSS Satyr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/CSSSatyr(www.greenxf.com).zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/checkbox_no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/checkbox_yes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tree-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-sub.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/CSS Satyr.png.htm" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\bg.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\body_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\body_bg_01.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\checkbox_no.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\checkbox_yes.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\close_1.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\loading1.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\title_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\titlebg.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\titlebg2.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-add.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-sub.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\tree_icon.gif" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\tree_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="E:\javascript\seven\images\x.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.css" afterPath="$PROJECT_DIR$/seven.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.js" afterPath="$PROJECT_DIR$/seven.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ca8a9e6f-d45c-4fc7-8924-ae034536d83a" name="Default" comment="" />
     <ignored path="seven.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,7 +46,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="412" />
+    <option name="x" value="246" />
     <option name="y" value="2" />
     <option name="width" value="1118" />
     <option name="height" value="736" />
@@ -212,7 +182,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="412" y="2" width="1118" height="736" extended-state="0" />
+    <frame x="246" y="2" width="1118" height="736" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20417424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
