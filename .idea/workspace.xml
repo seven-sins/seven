@@ -2,13 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca8a9e6f-d45c-4fc7-8924-ae034536d83a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_yes.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/tree-node-icon.png" afterPath="$PROJECT_DIR$/images/tree-node-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/CSS Satyr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/CSSSatyr(www.greenxf.com).zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/checkbox_no.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/checkbox_yes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tree-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-add.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/tree-node-sub.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图标素材/1/CSS Satyr.png.htm" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\bg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\body_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\body_bg_01.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\checkbox_no.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\checkbox_yes.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\close_1.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\loading1.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\title_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\titlebg.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\titlebg2.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-add.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\tree-node-sub.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\tree_icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\tree_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\javascript\seven\images\x.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.css" afterPath="$PROJECT_DIR$/seven.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.js" afterPath="$PROJECT_DIR$/seven.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/树形控件.html" afterPath="$PROJECT_DIR$/树形控件.html" />
     </list>
     <ignored path="seven.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,38 +50,7 @@
     <favorites_list name="seven" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="seven.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seven.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667">
-              <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="seven.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seven.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="树形控件.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/树形控件.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,9 +62,9 @@
         <option value="$PROJECT_DIR$/json1.json" />
         <option value="$PROJECT_DIR$/json.js" />
         <option value="$PROJECT_DIR$/demo.html" />
-        <option value="$PROJECT_DIR$/seven.css" />
-        <option value="$PROJECT_DIR$/seven.js" />
         <option value="$PROJECT_DIR$/树形控件.html" />
+        <option value="$PROJECT_DIR$/seven.js" />
+        <option value="$PROJECT_DIR$/seven.css" />
       </list>
     </option>
   </component>
@@ -85,8 +76,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="250" />
-    <option name="y" value="4" />
+    <option name="x" value="412" />
+    <option name="y" value="2" />
     <option name="width" value="1118" />
     <option name="height" value="736" />
   </component>
@@ -132,6 +123,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="图标素材" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -145,7 +150,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\javascript\seven\图标素材\1" />
       <recent name="E:\javascript\seven\images" />
+      <recent name="E:\javascript\seven\图标素材" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\javascript\seven\图标素材\1" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,10 +212,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="250" y="4" width="1118" height="736" extended-state="0" />
-    <editor active="true" />
+    <frame x="412" y="2" width="1118" height="736" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20417424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20417424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -272,18 +282,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seven.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seven.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667">
-          <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.30105633">
+          <caret line="1768" column="30" selection-start-line="1768" selection-start-column="30" selection-end-line="1768" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -292,6 +294,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/图标素材/1/checkbox_no.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seven.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65050167">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -117,6 +117,8 @@
     outline: none;
     background-color: transparent;
     background-attachment: scroll;
+    background-image:url(images/tree-icon.png);
+    background-repeat: no-repeat;
 }
 .t-tree-container li .t-tree-node-text{
     height:21px;
@@ -126,14 +128,15 @@
     padding: 1px 3px 0 0;
 }
 .t-tree-root-open{
-    background:url(images/tree-node-sub.png) no-repeat;
+    background-position: -120px -0px;
 }
 .t-tree-root-close{
-    background:url(images/tree-node-add.png) no-repeat;
+    background-position: -60px -0px;
 }
 .t-tree-child-icon{
     width:16px;height:16px;
-    background-image:url(images/tree-node-icon.png);
+    background-image:url(images/tree-icon.png);
+    background-position: -90px -0px;
     background-repeat: no-repeat;
     margin-right: 6px;
     vertical-align: top;

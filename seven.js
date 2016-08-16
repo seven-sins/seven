@@ -1803,14 +1803,6 @@
                     node.appendChild(li, list[i]);
                 }
             }
-            // 预加载2个图标，避免初次切换引起闪烁
-            var temp = document.createElement('span');
-            temp.className = 't-tree-root-open t-tree-node-not-show';
-            treeContainer.appendChild(temp);
-            temp = null;
-            temp = document.createElement('span');
-            temp.className = 't-tree-root-close t-tree-node-not-show';
-            treeContainer.appendChild(temp);
             // 插入节点
             appendNode(obj.newData, treeContainer);
         }
