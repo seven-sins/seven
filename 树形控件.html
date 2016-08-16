@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style type="text/css">
+		
+	</style>
+</head>
+
+<body>
+<input type="text" class="tree" />
+<link href="seven.css" rel="stylesheet" />
+<script type="text/javascript" src="seven.js" ></script>
+
+	<script type="text/javascript">
+        window.data =[
+            { "id":1, "name": "达州市", "parentId": 0 },
+            { "id":2, "name": "翠屏路", "parentId": 1 },
+            { "id":3, "name": "红旗路", "parentId": 1 },
+            { "id":4, "name": "大西街", "parentId": 1 },
+            { "id":5, "name": "仙鹤路", "parentId": 1 },
+            { "id":6, "name": "达巴路", "parentId": 1 },
+            { "id":7, "name": "来凤路", "parentId": 1 },
+            { "id":8, "name": "永丰街", "parentId": 1 },
+            { "id":9, "name": "柴市街", "parentId": 1 },
+            { "id":10, "name": "成都市", "parentId": 0 },
+            { "id":11, "name": "高新区", "parentId": 10 },
+            { "id":12, "name": "肖家河", "parentId": 11 },
+            { "id":13, "name": "芳草街", "parentId": 11 },
+            { "id":14, "name": "桂溪街", "parentId": 11 },
+            { "id":15, "name": "西园街", "parentId": 11 }
+        ];
+
+        s(".tree").treeView({
+            id: "id",
+            text: "name",
+            parentId: "parentId",
+            expand: true,
+            data: window.data
+        });
+	</script>
+</body>
+</html>

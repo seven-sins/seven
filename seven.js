@@ -1690,14 +1690,14 @@
         },
         // end
         // 表单插件
-        dropdownTree: function(args){
-            if(typeof args === 'undefined') args = {};
+        treeView: function(args){
+            if(typeof args == 'undefined') args = {};
             var obj = {};
             // 是否展开节点
             obj.expand = (args.expand === true) ? true : false;
             obj.elem = this.elements[0];
             // 数据格式转换
-            if(typeof args.data === 'undefined'){
+            if(typeof args.data == 'undefined'){
                 seven.ajax({
                     url: args.url,
                     type: 'get',
@@ -1787,6 +1787,10 @@
                     a.appendChild(span1);
                     a.appendChild(span2);
                     if(list[i].items && list[i].items.length > 0){
+                        li.appendChild(span);
+                    }else{
+                        // 没有子节点
+                        span.className = 't-tree-node-span t-tree-node-placeholder';
                         li.appendChild(span);
                     }
                     li.appendChild(a);
@@ -1946,7 +1950,7 @@
             }
 
             //设置ajax请求头
-            ajax.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+            ajax.setRequestHeader("content-type", "application/x-www-form-urlencoded; charset=utf-8");
 
             //AJAX异步对象不断监听服务器响应状态0-1-2-3-4
             ajax.onreadystatechange = function () {
