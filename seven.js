@@ -1783,7 +1783,10 @@
                     }
                     var span2 = document.createElement('span');
                     span2.className = 't-tree-child-node-text';
-                    span2.innerHTML = list[i][args.text];
+                    var span2_text = document.createElement('span');
+                    span2_text.innerHTML = list[i][args.text];
+                    span2.appendChild(span2_text);
+
                     a.appendChild(span1);
                     a.appendChild(span2);
                     if(list[i].items && list[i].items.length > 0){
@@ -1800,6 +1803,14 @@
                     node.appendChild(li, list[i]);
                 }
             }
+            // 预加载2个图标，避免初次切换引起闪烁
+            var temp = document.createElement('span');
+            temp.className = 't-tree-root-open t-tree-node-not-show';
+            treeContainer.appendChild(temp);
+            temp = null;
+            temp = document.createElement('span');
+            temp.className = 't-tree-root-close t-tree-node-not-show';
+            treeContainer.appendChild(temp);
             // 插入节点
             appendNode(obj.newData, treeContainer);
         }

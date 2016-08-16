@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca8a9e6f-d45c-4fc7-8924-ae034536d83a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tree-node-add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tree-node-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tree-node-sub.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/树形控件.html" />
-      <change type="DELETED" beforePath="E:\javascript\seven\demo.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json.json" afterPath="$PROJECT_DIR$/json.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_no.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/checkbox_yes.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/tree-node-icon.png" afterPath="$PROJECT_DIR$/images/tree-node-icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.css" afterPath="$PROJECT_DIR$/seven.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seven.js" afterPath="$PROJECT_DIR$/seven.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/树形控件.html" afterPath="$PROJECT_DIR$/树形控件.html" />
     </list>
     <ignored path="seven.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="seven.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="seven.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seven.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.03521127">
-              <caret line="1707" column="18" selection-start-line="1707" selection-start-column="18" selection-end-line="1707" selection-end-column="18" />
+            <state vertical-scroll-proportion="-12.666667">
+              <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,17 +43,17 @@
         <entry file="file://$PROJECT_DIR$/seven.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="1" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+              <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="树形控件.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="树形控件.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/树形控件.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.821428">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -72,9 +70,10 @@
         <option value="$PROJECT_DIR$/json.json" />
         <option value="$PROJECT_DIR$/json1.json" />
         <option value="$PROJECT_DIR$/json.js" />
+        <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/seven.css" />
         <option value="$PROJECT_DIR$/seven.js" />
-        <option value="$PROJECT_DIR$/demo.html" />
+        <option value="$PROJECT_DIR$/树形控件.html" />
       </list>
     </option>
   </component>
@@ -86,8 +85,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
-    <option name="y" value="7" />
+    <option name="x" value="250" />
+    <option name="y" value="4" />
     <option name="width" value="1118" />
     <option name="height" value="736" />
   </component>
@@ -203,7 +202,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="202" y="7" width="1118" height="736" extended-state="0" />
+    <frame x="250" y="4" width="1118" height="736" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20417424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -273,26 +272,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/树形控件.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seven.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="1" selection-start-line="132" selection-start-column="1" selection-end-line="132" selection-end-column="1" />
+          <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/seven.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03521127">
-          <caret line="1707" column="18" selection-start-line="1707" selection-start-column="18" selection-end-line="1707" selection-end-column="18" />
+        <state vertical-scroll-proportion="-12.666667">
+          <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/树形控件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding />
         </state>
       </provider>

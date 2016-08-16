@@ -102,7 +102,7 @@
 /*表彰插件样式*/
 /*下拉树*/
 .t-tree-container{padding:6px 0 0 0;}
-.t-tree-container *{font: 15px/21px Arial, Helvetica, simsun, sans-serif;}
+.t-tree-container *{font: 14px/16px Arial, Helvetica, simsun, sans-serif;}
 .t-tree-container ul{background: url(images/line_conn.gif) 0 0 repeat-y;padding:0 0 0 23px;}
 .t-tree-container li{list-style: none;text-align: left;white-space: nowrap; padding:4px 0 0 0;}
 .t-tree-node-placeholder{visibility:hidden !important;}
@@ -156,9 +156,7 @@
     line-height: 18px;
     margin-right: 2px;
 }
-
-
-
+.t-tree-node-not-show{position:absolute;left:-9999999px;top:-9999999px;}
 
 
 

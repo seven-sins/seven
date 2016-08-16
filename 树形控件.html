@@ -28,15 +28,18 @@
             { "id":12, "name": "肖家河", "parentId": 11 },
             { "id":13, "name": "芳草街", "parentId": 11 },
             { "id":14, "name": "桂溪街", "parentId": 11 },
-            { "id":15, "name": "西园街", "parentId": 11 }
+            { "id":15, "name": "西园街", "parentId": 11 },
+            { "id":16, "name": "重庆市", "parentId": 0 },
+            { "id":17, "name": "上海市", "parentId": 0 }
         ];
 
         s(".tree").treeView({
             id: "id",
             text: "name",
             parentId: "parentId",
-            expand: true,
-            data: window.data
+            expand: false,
+            data: window.data,
+            checkbox: true
         });
 	</script>
 </body>
