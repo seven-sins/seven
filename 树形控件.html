@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<input type="text" class="tree" />
+<input type="text" class="tree" id="tree" />
 <link href="seven.css" rel="stylesheet" />
 <script type="text/javascript" src="seven.js" ></script>
 
@@ -33,14 +33,32 @@
             { "id":17, "name": "上海市", "parentId": 0 }
         ];
 
-        s(".tree").treeView({
+        var tree = s(".tree").treeView({
             id: "id",
             text: "name",
             parentId: "parentId",
             expand: false,
             data: window.data,
-            checkbox: true
+            url: "",  // data 和 url必传一个
+            value: "defaultValue", // 默认值
+            select: function(item){
+                //console.log(this); // 当前元素
+                //console.log(item); // 数据
+            }
         });
+
+        function get(){ // 取值
+            console.log(tree.get())
+        }
+
+        function set(){ // 设置值
+            tree.set(10)
+        }
+
 	</script>
+
+
+<span style="margin:600px 0 0 300px;" onclick="get()">取值</span>
+<span style="margin:650px 0 0 300px;" onclick="set()">设值</span>
 </body>
 </html>

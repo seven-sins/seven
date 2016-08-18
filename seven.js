@@ -689,11 +689,15 @@
             }
             return this;
         },
-        bind: function (events, fn) {
-            for (var i = 0; i < this.elements.length; i++) {
-                this.bindEvent(this.elements[i], events, fn);
+        bind: function (events, fn, obj) {
+            if(typeof obj === 'undefined'){
+                for (var i = 0; i < this.elements.length; i++) {
+                    this.bindEvent(this.elements[i], events, fn);
+                }
+            }else{
+                this.bindEvent(obj, events, fn);
             }
-            
+
             return this;
         },
         unbind: function (events) {
@@ -765,8 +769,9 @@
             
             return this;
         },
-        hasClass: function (className) {
-        	if (this.elements[0].className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
+        hasClass: function (className, elem) {
+            var dom = elem || this.elements[0];
+        	if (dom.className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
             	return true;
         	
             return false;
@@ -805,18 +810,30 @@
             this.elements[0] = element;
             return this;
         },
-        addClass: function (className) {
-            for (var i = 0; i < this.elements.length; i++) {
-                if (!this.elements[i].className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
-                    this.elements[i].className += ' ' + className;
+        addClass: function (className, elem) {
+            if(typeof elem === 'undefined'){
+                for (var i = 0; i < this.elements.length; i++) {
+                    if (!this.elements[i].className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
+                        this.elements[i].className += ' ' + className;
+                }
+            }else{
+                if (!elem.className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
+                    elem.className += ' ' + className;
             }
+
             return this;
         },
-        removeClass: function (className) {
-            for (var i = 0; i < this.elements.length; i++) {
-                if (this.elements[i].className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
-                    this.elements[i].className = this.elements[i].className.replace(new RegExp('(\\s+|^)' + className + '(\\s+|$)'), '');
+        removeClass: function (className, elem) {
+            if(typeof elem === 'undefined'){
+                for (var i = 0; i < this.elements.length; i++) {
+                    if (this.elements[i].className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
+                        this.elements[i].className = this.elements[i].className.replace(new RegExp('(\\s+|^)' + className + '(\\s+|$)'), '');
+                }
+            }else{
+                if (elem.className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)')))
+                    elem.className = elem.className.replace(new RegExp('(\\s+|^)' + className + '(\\s+|$)'), '');
             }
+
             return this;
         },
         center: function () {
@@ -1691,11 +1708,14 @@
         // end
         // 表单插件
         treeView: function(args){
+            var self = this;
+
             if(typeof args == 'undefined') args = {};
             var obj = {};
             // 是否展开节点
             obj.expand = (args.expand === true) ? true : false;
             obj.elem = this.elements[0];
+
             // 数据格式转换
             if(typeof args.data == 'undefined'){
                 seven.ajax({
@@ -1760,31 +1780,42 @@
                         span.className = 't-tree-node-span t-tree-root-open';
                     }
                     // 节点点击事件
-                    span.onclick = function(){
+                    self.bind('click', function(){
                         var className = 't-tree-root-close';
                         var tag = this.parentNode.getElementsByTagName('ul')[0];
-                        if (this.className.match(new RegExp('(\\s+|^)' + className + '(\\s+|$)'))){
+                        if (self.hasClass(className, this)){
                             this.className = 't-tree-node-span t-tree-root-open';
                             if(tag) tag.style.display = 'block';
                         }else{
                             this.className = 't-tree-node-span t-tree-root-close';
                             if(tag) tag.style.display = 'none';
                         }
-                    };
+                    }, span);
 
                     var a = document.createElement('a');
                     a.setAttribute('data-value', list[i][args.id]);
-                    a.className = 't-tree-node-text'; // 节点文本
-                    var span1 = document.createElement('span');
-                    if(list[i].items && list[i].items.length > 0){
-                        span1.className = 't-tree-child-icon t-tree-branch';
-                    }else{
-                        span1.className = 't-tree-child-icon t-tree-leaf';
+                    if(typeof args.select === 'function'){
+                        args.select.call(a, list[i]);
                     }
+                    a.className = 't-tree-node-text'; // 节点文本
+                    a.data = list[i];
+                    self.bind('click', function(){
+                        obj.elem._data = this.data;
+                        if(obj.elem.tagName.toLowerCase() === 'input'){
+                            obj.elem.value = this.data[args.id];
+                        }
+                        var className = 't-tree-node-active';
+                        seven(treeContainer).find('.t-tree-node-active').removeClass(className);
+                        self.addClass(className, this);
+                    }, a);
+                    var span1 = document.createElement('span');
+                    span1.className = 't-tree-child-icon';
+
                     var span2 = document.createElement('span');
                     span2.className = 't-tree-child-node-text';
                     var span2_text = document.createElement('span');
                     span2_text.innerHTML = list[i][args.text];
+                    span2_text.className = 't-tree-node-text-value';
                     span2.appendChild(span2_text);
 
                     a.appendChild(span1);
@@ -1805,6 +1836,27 @@
             }
             // 插入节点
             appendNode(obj.newData, treeContainer);
+
+            //
+            self.get = function(){
+                return obj.elem._data;
+            };
+            self.set = function(value){
+                if(typeof value === 'undefined'){
+                    return false;
+                }
+                obj.elem.value = value;
+                var className = 't-tree-node-active';
+                seven(treeContainer).find('.t-tree-node-text').removeClass(className).each(function(){
+                    if(this.getAttribute('data-value') == value){
+                        self.addClass(className, this);
+                        // 设置数据
+                        obj.elem._data = this.data;
+                    }
+                });
+            };
+
+            return self;
         }
     };
 
