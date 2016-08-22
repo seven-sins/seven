@@ -1855,6 +1855,10 @@
                     }
                 });
             };
+            //
+            if(typeof args.value !== 'undefined'){
+                self.set(args.value);
+            }
 
             return self;
         }
