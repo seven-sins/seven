@@ -1808,8 +1808,7 @@
                         seven(treeContainer).find('.t-tree-node-active').removeClass(className);
                         self.addClass(className, this);
                     }, a);
-                    var span1 = document.createElement('span');
-                    span1.className = 't-tree-child-icon';
+
 
                     var span2 = document.createElement('span');
                     span2.className = 't-tree-child-node-text';
@@ -1818,7 +1817,12 @@
                     span2_text.className = 't-tree-node-text-value';
                     span2.appendChild(span2_text);
 
-                    a.appendChild(span1);
+                    // item显示小图标
+                    if(args.icon === true){
+                        var span_icon = document.createElement('span');
+                        span_icon.className = 't-tree-child-icon';
+                        a.appendChild(span_icon);
+                    }
                     a.appendChild(span2);
                     if(list[i].items && list[i].items.length > 0){
                         li.appendChild(span);
@@ -1859,6 +1863,117 @@
             if(typeof args.value !== 'undefined'){
                 self.set(args.value);
             }
+
+            return self;
+        },
+        // 下拉单选
+        dropdownList: function(args){
+            var self = this;
+
+            if(typeof args == 'undefined') args = {};
+            var obj = {};
+            obj.elem = this.elements[0];
+            // 当前元素obj.elem前插入容器对象div
+            var parentNode = obj.elem.parentNode;
+            var dropdownContainer = document.createElement('div');
+            dropdownContainer.className = 't-dropdownlist-container';
+            parentNode.insertBefore(dropdownContainer, obj.elem);
+            obj.elem.style.display = 'none';
+            // 获取数据
+            // 数据格式转换
+            if(typeof args.data == 'undefined'){
+                seven.ajax({
+                    url: args.url,
+                    type: 'get',
+                    async: false,
+                    success: function(data){
+                        obj.data = data;
+                    }
+                });
+            }else{
+                obj.data = args.data;
+            }
+            // 默认提示文字
+            if(args.defaultText !== false){
+                var empty = [];
+                var defaultValue = {};
+                defaultValue[args.id] = '';
+                defaultValue[args.text] = '请选择';
+                empty.push(defaultValue);
+                obj.data = empty.concat(obj.data);
+            }
+            // 显示部分
+            var show_part = document.createElement('span');
+            show_part.className = 't-dropdownlist-text t-form-elem';
+            var span_span = document.createElement('span');
+            var span_i = document.createElement('i');
+            span_i.className = 't-dropdownlist-text-icon';
+            //
+            show_part.appendChild(span_span);
+            show_part.appendChild(span_i);
+            // 列表部份
+            var ul = document.createElement('ul');
+            ul.className = 't-dropdownlist-list';
+            if(typeof args.height !== 'undefined'){
+                ul.style.height = parseInt(args.height);
+            }
+            ul.style.overflow = 'auto';
+            // 列表项
+            for(var i=0;i<obj.data.length;i++){
+                var li = document.createElement('li');
+                li.className = 't-dropdownlist-item t-form-elem';
+                li.data = obj.data[i];
+                li.setAttribute('data-value', obj.data[i][args.id]);
+                li.innerHTML = obj.data[i][args.text];
+                self.bind('click', function(){
+                    obj.elem.data = this.data;
+                    // 设置显示值
+                    self.set(this.data[args.id]);
+                    // 隐藏列表
+                    ul.style.display = 'none';
+                    // 如果tag === input
+                    if(obj.elem.tagName.toLowerCase() === 'input'){
+                        obj.elem.value = this.data[args.id];
+                    }
+                }, li);
+                ul.appendChild(li);
+            }
+            // 容器失去焦点
+            self.bind('blur', function(){
+                ul.style.display = 'none'
+            }, dropdownContainer);
+            // 点击事件
+            self.bind('click', function(){
+                if(ul.style.display == 'block'){
+                    ul.style.display = 'none';
+                }else{
+                    ul.style.display = 'block';
+                }
+            }, show_part);
+            //
+            self.set = function(value){
+                if(value){
+                    for(var i=0;i<obj.data.length;i++){
+                        if(obj.data[i][args.id] == value){
+                            span_span.innerHTML = obj.data[i][args.text];
+                            obj.elem.data = obj.data[i];
+                            return false;
+                        }
+                    }
+                }else{
+                    span_span.innerHTML = '请选择';
+                }
+            };
+            self.get = function(){
+                return obj.elem.data;
+            };
+            // 如果没有初始值，设置
+            if(typeof args.value === 'undefined'){
+                self.set();
+            }
+
+            dropdownContainer.appendChild(show_part);
+            dropdownContainer.appendChild(ul);
 
             return self;
         }

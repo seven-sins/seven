@@ -100,24 +100,25 @@
 }
 
 /*表彰插件样式*/
-/*下拉树*/
+.t-form-elem{height:25px;line-height:25px;}
+/*树视图*/
 .t-tree-container{padding:6px 0 0 0;}
-.t-tree-container *{font: 13px/16px Arial, Helvetica, simsun, sans-serif;}
-.t-tree-container ul{background: url(images/line_conn.gif) 0 0 repeat-y;padding:0 0 0 23px;}
+.t-tree-container *{font: 12px/16px Arial, Helvetica, simsun, sans-serif;}
+.t-tree-container ul{background: url(images/line_conn.gif) 0 0 repeat-y;padding:0 0 0 18px;}
 .t-tree-container li{list-style: none;text-align: left;white-space: nowrap; padding:0px 0 0 0;vertical-align: middle;
     line-height:25px;
 }
 .t-tree-node-placeholder{visibility:hidden !important;}
 .t-tree-container .t-tree-node-span{
-    width:21px;height:21px; margin: 0 2px 0 0; display: inline-block; vertical-align: middle; border: 0 none;
+    width:18px;height:21px; margin: 0 2px 0 0; display: inline-block; vertical-align: middle; border: 0 none;
     cursor: pointer; outline: none; background-color: transparent; background-attachment: scroll;
     background-image:url(images/tree-icon.png); background-repeat: no-repeat;
 }
 .t-tree-container li .t-tree-node-text{
     height:21px;vertical-align: middle;display: inline-block;line-height:21px;cursor:pointer;
 }
-.t-tree-root-open{ background-position: -120px -0px; }
-.t-tree-root-close{ background-position: -60px -0px; }
+.t-tree-root-open{ background-position: -0px -0px; }
+.t-tree-root-close{ background-position: -45px -0px; }
 .t-tree-child-icon{
     width:16px;height:16px; background-image:url(images/tree-icon.png); background-position: -90px -0px; background-repeat: no-repeat;
     margin-right: 6px; vertical-align: middle; font-size:12px; display: inline-block; border: 0 none; cursor: pointer;
@@ -126,5 +127,23 @@
 .t-tree-child-node-text{ margin-right: 2px; }
 .t-tree-node-not-show{position:absolute;left:-9999999px;top:-9999999px;}
 .t-tree-node-active .t-tree-node-text-value{background:#3ba1f0;color:#fff;}
+
+/*下拉树*/
+.t-dropdownlist-container{position:relative;}
+.t-dropdownlist-container *{font-size:12px;}
+.t-dropdownlist-container .t-dropdownlist-text{background:#eee;display:inline-block;width:100%;
+    text-indent:8px;cursor:pointer;position:relative;border:1px solid #ddd;margin:-1px;
+}
+.t-dropdownlist-container .t-dropdownlist-text span{}
+.t-dropdownlist-container .t-dropdownlist-text-icon{
+    display:inline-block;width:16px;height:16px; background-image:url(images/tree-icon.png);
+    background-position: -0px -0px;
+    position:absolute;right:6px;top:4px;
+}
+.t-dropdownlist-container .t-dropdownlist-list{border:1px solid #ddd;
+    display:none;margin:-1px;border-top:none;position:absolute;top:25px;left:0;z-index:1;width:100%;
+}
+.t-dropdownlist-item{text-indent:8px;cursor:pointer;}
+.t-dropdownlist-item:hover{background:#eee;}
 
 
