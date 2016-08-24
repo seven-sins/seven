@@ -2399,7 +2399,6 @@
 
                 }, 1000);
             }
-
         },
         open: function (args) {
             if (typeof args == 'string') {

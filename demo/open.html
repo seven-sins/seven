@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../seven.css" rel="stylesheet" />
+    <script type="text/javascript" src="../seven.js" ></script>
+    <script type="text/javascript" >
+    function openDialog(){
+        s.open({url:'http://www.baidu.com', title:'用户登录', width:404, height:280});
+    }
+
+    function msg(){
+        s.msg({msg: '登录成功，欢迎回来', background: 'orange', fontSize: '20px', second: 0});
+    }
+
+    function confirm(){
+        s.confirm({
+            msg: '确定要关闭吗？',
+            confirm:function(){
+                console.log(this);
+                //s.alert('confirm');
+                s.alert({
+                    msg:'确定',
+                    title:'标题'
+                });
+                this.close();
+            },
+            cancel:function(){
+                //console.log(this);
+                s.alert({
+                    msg:'取消',
+                    title:'标题'
+                });
+            },
+            title:'系统消息'
+        });
+    }
+    </script>
+    <style type="text/css">
+        .buttons a{padding:6px 13px;border:1px solid #ddd;cursor:pointer;}
+    </style>
+</head>
+<body>
+<div class="buttons">
+    <a onclick="confirm()">确认</a>
+    <a onclick="msg()">简单弹窗</a>
+    <a onclick="openDialog()">打开新窗口</a>
+</div>
+</body>
+</html>

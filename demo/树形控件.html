@@ -8,24 +8,9 @@
 </head>
 
 <body>
-<div class="container" style="width:133px;margin:30px;">
-    <input type="text" class="tree" id="tree"  />
-</div>
-
-<!--<div class="t-dropdownlist-container">-->
-    <!--<span class="t-dropdownlist-text t-form-elem">-->
-        <!--<span>达州市</span>-->
-        <!--<i class="t-dropdownlist-text-icon"></i>-->
-    <!--</span>-->
-    <!--<ul class="t-dropdownlist-list">-->
-        <!--<li class="t-dropdownlist-item t-form-elem">达州市</li>-->
-        <!--<li class="t-dropdownlist-item t-form-elem">成都市</li>-->
-        <!--<li class="t-dropdownlist-item t-form-elem">北京市</li>-->
-    <!--</ul>-->
-<!--</div>-->
-
-<link href="seven.css" rel="stylesheet" />
-<script type="text/javascript" src="seven.js" ></script>
+<span type="text" class="tree" id="tree" >a</span>
+<link href="../seven.css" rel="stylesheet" />
+<script type="text/javascript" src="../seven.js" ></script>
 
 	<script type="text/javascript">
         window.data =[
@@ -48,15 +33,15 @@
             { "id":17, "name": "上海市", "parentId": 0 }
         ];
 
-        var tree = s(".tree").dropdownList({
-            id: "id",
-            text: "name",
-            parentId: "parentId",
+        var tree = s(".tree").treeView({
+            id: "id", // id字段名称
+            text: "name", // text字段名称
+            parentId: "parentId", // 父级名称
             expand: false,
             data: window.data,
-            height: 300,
             url: "",  // data 和 url必传一个
-            //value: "10", // 默认值
+            value: "10", // 默认值
+            icon: true, // 显示图标
             select: function(item){
                 //console.log(this); // 当前元素
                 //console.log(item); // 数据

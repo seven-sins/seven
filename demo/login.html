@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../seven.css" rel="stylesheet" />
+    <script type="text/javascript" src="../seven.js" ></script>
+    <script type="text/javascript">
+        s(function(){
+            //$.msg({msg: 'test shadow', shadow: true})
+            //$.msg({msg: 'msg', second: 11111})
+            //$.open('http://www.baidu.com');
+            //$.open({url: 'http://www.baidu.com', shadow: true})
+            //$(".login-container").center();
+            s.login({submit:function(user){
+                //console.log(this);
+                //console.log(user);
+                this.msg(user);
+                this.close();
+            },forget:function(){
+                console.log(this);
+                this.close();
+            },userName:'用户名/邮箱/手机号'});
+        })
+    </script>
+</head>
+<body>
+<div class="login-container">
+    <div class="login-container-item">
+        <label>用户名</label>
+        <p><input type="text" name="userName" placeholder="用户名/邮箱/手机号"/>
+    </div>
+    <div class="login-container-item">
+        <label>密码</label>
+        <p><input type="password" name="userName" /></p>
+    </div>
+    <div class="login-toolbar">
+        <p class="forgot-password">
+            <span class="errorMsg"></span>
+            <a href="javascript:;">忘记密码?</a>
+        </p>
+        <p class="login-buttons">
+            <input type="checkbox" id="rememberPassword" />
+            <label for="rememberPassword">记住密码</label>
+            <span>登录</span>
+        </p>
+    </div>
+</div>
+</body>
+</html>
