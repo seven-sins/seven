@@ -5,16 +5,16 @@
     <link href="../seven.css" rel="stylesheet" />
     <script type="text/javascript" src="../seven.js" ></script>
 <style type="text/css">
-#div1{width:100px;height:100px;background:#d00;;position:absolute;left:366px;top:366px;}
-#div2{width:100px;height:100px;background:#d00;;position:absolute;left:566px;top:366px;}
+#div1{width:100px;height:100px;background:#d00;;position:absolute;left:366px;top:266px;}
+#div2{width:100px;height:100px;background:#d00;;position:absolute;left:566px;top:266px;}
 </style>
 <script type="text/javascript">
     function fall1(){
-        s("#div1").fall({target: s("#div1").top() - 100, speed: 5, interval: 20, up: true});
+        s("#div1").drag().fall({speed: 5, interval: 20, up: true});
     }
 
     function fall2(){
-        s("#div2").fall({target: s("#div2").top() + 100, speed: 5, interval: 20, up: false});
+        s("#div2").drag().fall({speed: 5, interval: 20, up: false});
     }
 </script>
 </head>

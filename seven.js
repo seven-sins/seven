@@ -1214,7 +1214,7 @@
                 timer = setInterval(function () {
                     if(position === obj.offsetTop){
                         onSite++;
-                        if(onSite > 10){ // 连续10次dom在原位置，结束timer
+                        if(onSite > 3){ // 连续3次dom在原位置，结束timer
                             clearInterval(timer);
                         }
                     }else{
@@ -1229,7 +1229,7 @@
                     var target = settings.target;
                     if(settings.up === false){ // 向下运动
                         if(settings.target == null){
-                            target = self.getInner().height + height;
+                            target = self.getInner().height - height;
                         }
                         if (top > target) {
                             top = target;
@@ -1238,7 +1238,7 @@
                         }
                     }else{ // 向上运行
                         if(settings.target == null){
-                            target = self.getInner().height - height;
+                            target = 0;
                         }
                         if (top < target) {
                             top = target;
