@@ -1192,7 +1192,7 @@
         },
         fall: function (args) {
             var self = this;
-            obj = this.elements[0];
+            var obj = this.elements[0];
 
             var settings = {
                 speed: 5,
