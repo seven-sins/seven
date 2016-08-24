@@ -1190,29 +1190,50 @@
 
             return self;
         },
-        fall: function (speed, interval) {/*自由落体，待解决*/
-            if (!speed)speed = 5;
-            if (!interval)interval = 30;
+        fall: function (args) {/*自由落体，待解决*/
             var self = this;
             obj = this.elements[0];
+
+            var settings = {
+                speed: 5,
+                interval: 50,
+                target: null
+            };
+            self.initialize(settings, args);
+
             var timer = null;
             var iSpeed = 0;
-            var width = obj.offsetWidth;
-            var height = obj.offsetHeight;
-            obj.onclick = function () {
-                startMove();
-            };
+            var width = obj.offsetWidth; // 当前元素宽度
+            var height = obj.offsetHeight; // 当前元素高度
+            startMove();
+
+            var onSite = 0; // 检查dom是否在原位置
+            var position = 0;
             function startMove() {
                 timer = setInterval(function () {
-                    iSpeed += speed;
+                    iSpeed += settings.speed;
+                    if(position === obj.offsetTop){
+                        onSite++;
+                        if(onSite > 10){ // 连续10次dom在原位置，结束timer
+                            clearInterval(timer);
+                        }
+                    }else{
+                        position = obj.offsetTop;
+                    }
                     var top = obj.offsetTop + iSpeed;
-                    if (top > self.getInner().height - height) {
-                        top = self.getInner().height - height;
+
+                    // 目标位置
+                    var target = settings.target;
+                    if(settings.target == null){
+                        target = self.getInner().height - height;
+                    }
+                    if (top > target) {
+                        top = target;
                         iSpeed = -iSpeed;
                         iSpeed *= 0.75;
                     }
                     obj.style.top = top + 'px';
-                }, interval);
+                }, settings.interval);
             }
 
             return self;
