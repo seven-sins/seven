@@ -1190,7 +1190,7 @@
 
             return self;
         },
-        fall: function (args) {/*自由落体，待解决*/
+        fall: function (args) {
             var self = this;
             obj = this.elements[0];
 
