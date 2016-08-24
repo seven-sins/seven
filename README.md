@@ -176,7 +176,7 @@
 
 
 ##表单插件
-#树
+###树
     var tree = s(".tree").treeView({
         id: "id", // id字段名称
         text: "name", // text字段名称
@@ -200,7 +200,7 @@
         tree.set(10)
     }
 
-#下拉单选
+###下拉单选
     var dropdown = s(".dropdown").dropdownList({
         id: "id", // id字段名称
         text: "name", // text字段名称
