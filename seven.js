@@ -1197,7 +1197,8 @@
             var settings = {
                 speed: 5,
                 interval: 50,
-                target: null
+                target: null,
+                up: false
             };
             self.initialize(settings, args);
 
@@ -1211,7 +1212,6 @@
             var position = 0;
             function startMove() {
                 timer = setInterval(function () {
-                    iSpeed += settings.speed;
                     if(position === obj.offsetTop){
                         onSite++;
                         if(onSite > 10){ // 连续10次dom在原位置，结束timer
@@ -1220,17 +1220,31 @@
                     }else{
                         position = obj.offsetTop;
                     }
-                    var top = obj.offsetTop + iSpeed;
+
+                    iSpeed += settings.speed;
+
+                    var top = settings.up === false ? obj.offsetTop + iSpeed : obj.offsetTop - iSpeed;
 
                     // 目标位置
                     var target = settings.target;
-                    if(settings.target == null){
-                        target = self.getInner().height - height;
-                    }
-                    if (top > target) {
-                        top = target;
-                        iSpeed = -iSpeed;
-                        iSpeed *= 0.75;
+                    if(settings.up === false){ // 向下运动
+                        if(settings.target == null){
+                            target = self.getInner().height + height;
+                        }
+                        if (top > target) {
+                            top = target;
+                            iSpeed = -iSpeed;
+                            iSpeed *= 0.75;
+                        }
+                    }else{ // 向上运行
+                        if(settings.target == null){
+                            target = self.getInner().height - height;
+                        }
+                        if (top < target) {
+                            top = target;
+                            iSpeed = -iSpeed;
+                            iSpeed *= 0.75;
+                        }
                     }
                     obj.style.top = top + 'px';
                 }, settings.interval);
