@@ -1252,6 +1252,10 @@
 
             return self;
         },
+        // 文字跳跃
+        wordJump: function(){
+
+        },
         /*$(this).move({opacity:100})*/
         move: function (args, fn) {
             var self = this;
