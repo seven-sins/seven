@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../sea.js"></script>
+    <script>
+        var a;
+        seajs.use('2/main.js', function(ex){
+            a = ex;
+        });
+
+        window.onload = function(){
+            a.show();
+        }
+    </script>
+    <style type="text/css">
+        #div1{width:200px;height:200px;background:red;position:fixed;display:none;}
+        #div2{width:30px;height:30px;background:green;position:absolute;right:0;bottom:0;}
+
+        #div3{width:100px;height:100px;background:green;position:absolute;right:0;top:0;}
+    </style>
+</head>
+<body>
+    <input type="button" value="弹窗" id="input1" />
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <div id="div3"></div>
+</body>
+</html>
