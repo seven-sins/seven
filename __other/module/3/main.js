@@ -1,7 +1,7 @@
 define(function(require, exports, module){
 
-    var a = require('2/drag.js');
-    var b = require('2/scale.js');
+    var a = require('./drag');
+    var b = require('./scale');
 
     var oInput = document.getElementById('input1');
     var oDiv1 = document.getElementById('div1');

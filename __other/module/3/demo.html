@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../sea.js"></script>
+    <script src="sea.js"></script>
     <script>
-        var a;
-        seajs.use('2/main.js', function(ex){
-            a = ex;
-        });
-
-        window.onload = function(){
-            a.show();
-        }
+        seajs.use('build/main.min.js');
     </script>
     <style type="text/css">
         #div1{width:200px;height:200px;background:red;position:fixed;display:none;}
