@@ -1025,7 +1025,7 @@
                     if (obj.speedX === 0 && obj.speedY === 0) {
                         clearInterval(obj.timer);
                         if(typeof settings.callback == 'function'){
-                            settings.callback.call();
+                            settings.callback.call(obj);
                         }
                     }
                 }, interval);
