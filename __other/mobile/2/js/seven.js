@@ -1351,8 +1351,8 @@
             };
             self.initialize(settings, args);
 
-            clearInterval(obj.opacityTimer);
-            obj.opacityTimer = setInterval(function () {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
                 var flag = true;
                 var iCur = Math.round(parseFloat(self.getStyle(obj, 'opacity')) * 100);
                 var iSpeed = settings.speed;
@@ -1368,7 +1368,7 @@
                 obj.style.filter = 'alpha(opacity=' + (iCur + iSpeed) + ')';
                 obj.style.opacity = (iCur + iSpeed) / 100;
                 if (flag) {
-                    clearInterval(obj.opacityTimer);
+                    clearInterval(obj.timer);
                     if (settings.callback) {
                         settings.callback.call(obj);
                     }
@@ -1425,7 +1425,7 @@
             obj.onmouseout = function () {
                 this.timer = setInterval(function () {
                     toRun();
-                }, interval);
+                }, settings.interval);
             };
 
             return self;
