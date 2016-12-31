@@ -2195,7 +2195,7 @@
                 }
             };
             var query = [], _data;
-            if (typeof data == 'object') {
+            if (typeof data == 'object' && method == 'GET') {
                 for (var key in data) {
                     query[query.length] = encodeURI(key) + "=" + encodeURIComponent(data[key]);
                 }
@@ -2539,9 +2539,14 @@
             var userLabel = document.createElement('label');
             userLabel.innerHTML = '用户名';
             var userInputWrap = document.createElement('p');
+            var discard = document.createElement('input');
+            discard.type = "password";
+            discard.style.display = 'none';
+            obj.appendChild(discard);
             var userInput = document.createElement('input');
             userInput.type = 'text';
             userInput.name = 'userName';
+            userInput.setAttribute('autocomplete', "off");
             userInput.setAttribute('placeholder', settings.userName);
 
             userInputWrap.appendChild(userInput);
@@ -2556,6 +2561,7 @@
             var pwdInput = document.createElement('input');
             pwdInput.type = 'password';
             pwdInput.name = 'passWord';
+            pwdInput.setAttribute('autocomplete', "off");
             pwdInput.setAttribute('placeholder', settings.passWord);
             pwdInputWrap.appendChild(pwdInput);
             pwd.appendChild(pwdLabel);
