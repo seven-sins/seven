@@ -1,4 +1,9 @@
-﻿##选择器
+﻿##项目说明
+	使用原生javascript开发， 主要用来替换jquery
+	实现了jquery各种常用选择器， 工具方法， 并扩展开发了部份通用插件， 如弹窗、一些常用javascript特效。。。
+	(本工具仅方便自己开发使用、较少时间更新)
+
+##选择器
     s('#id')
     s('.class')
     s('div')
@@ -18,6 +23,7 @@
     s('selector:first')
     s('selector:last')
     s('selector').siblings()
+    s('selector').siblings('.active')
     s('.main .left h1') //复杂选择器
     s('selector:last .subselector span:first i')
     s('form input[name="id"]:checked')  // :checked :first :last
@@ -69,6 +75,7 @@
     s(selector).is(':checked')
     s(selector).each(fn)
     s(selector).animate({left:300,top:300,speed:20,interval:30})	//left:目标位置，top:目标位置,speed:运动速度,interval:定时器间隔时间
+    s(".list li").wordBounce(); // <ul class='list'><li>琴弦列表</li><li>琴弦列表</li><li>琴弦列表</li></ul>
 
 ##工具方法
     s.each(array, fn)
