@@ -1,9 +1,11 @@
 ﻿##项目说明
+
 	使用原生javascript开发， 主要用来替换jquery
 	实现了jquery各种常用选择器， 工具方法， 并扩展开发了部份通用插件， 如弹窗、ajax上传、登录窗口、一些常用javascript特效。。。
 	(本工具仅方便自己开发使用、较少时间更新)
 
 ##选择器
+
     s('#id')
     s('.class')
     s('div')
@@ -29,10 +31,13 @@
     s('form input[name="id"]:checked')  // :checked :first :last
 
 ##事件
+
     s(selector).on('eventName',function(){})
     s(selector).bind('click', function(){})
     s(selector).unbind('click')
+
 ##方法
+
     s(function(){})
     s(selector).css('color','red')
     s(selector).css({'width':'100','height':'100'}})
@@ -78,6 +83,7 @@
     s(".list li").wordBounce(); // <ul class='list'><li>琴弦列表</li><li>琴弦列表</li><li>琴弦列表</li></ul>
 
 ##工具方法
+
     s.each(array, fn)
     s.trim()
     s.browser()
@@ -184,6 +190,7 @@
 
 ##表单插件
 ###树
+
     var tree = s(".tree").treeView({
         id: "id", // id字段名称
         text: "name", // text字段名称
@@ -208,6 +215,7 @@
     }
 
 ###下拉单选
+
     var dropdown = s(".dropdown").dropdownList({
         id: "id", // id字段名称
         text: "name", // text字段名称
@@ -232,6 +240,7 @@
 
 
 ###
+
     document.body.clientWidth ==> BODY对象宽度  
     document.body.clientHeight ==> BODY对象高度  
     document.documentElement.clientWidth ==> 可见区域宽度  
